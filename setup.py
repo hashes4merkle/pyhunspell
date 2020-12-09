@@ -35,8 +35,9 @@ if platform.system() == "Windows":
     main_module_kwargs['extra_compile_args'] = ['/MT']
 elif platform.system() == "Darwin":
     main_module_kwargs['define_macros'] = [('_LINUX', None)]
-    main_module_kwargs['libraries'] = ['os.popen("pkg-config --libs-only-l hunspell").read()[2:].strip()']
-    main_module_kwargs['include_dirs'] = '/usr/local/include/hunspell',
+    #main_module_kwargs['libraries'] = ['os.popen("pkg-config --libs-only-l hunspell").read()[2:].strip()']
+    main_module_kwargs['libraries'] = '/usr/local/Cellar/hunspell/1.7.0_2/lib',
+    main_module_kwargs['include_dirs'] = '/usr/local/Cellar/hunspell/1.7.0_2/include/hunspell/',
     main_module_kwargs['extra_compile_args'] = ['-Wall']
 else:
     main_module_kwargs['define_macros'] = [('_LINUX', None)]
